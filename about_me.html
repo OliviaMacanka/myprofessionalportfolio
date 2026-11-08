@@ -152,306 +152,327 @@
     <section class="about-section">
         <div class="container">
             <h2 class="section-title">My Experience</h2> 
+<style>
+  .resume-section {
+    max-width: 1100px;
+    margin: 56px auto;
+    padding: 36px 32px;
+    background: #ffffff;
+    border: 1px solid #e2eaf0;
+    color: #183653;
+    font-family: Georgia, "Times New Roman", serif;
+  }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume Section</title>
-  <style>
-    /* Section Container */
+  .resume-header {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .resume-eyebrow {
+    margin: 0 0 10px;
+    color: #2876a8;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .resume-title {
+    margin: 0 0 12px;
+    color: #183653;
+    font-size: 34px;
+  }
+
+  .resume-intro {
+    margin: 0;
+    color: #52677d;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .resume-category-title {
+    margin: 36px 0 16px;
+    color: #183653;
+    font-size: 24px;
+  }
+
+  .resume-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .resume-card {
+    padding: 22px;
+    border: 1px solid #d8e4ed;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .resume-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(24, 54, 83, 0.08);
+  }
+
+  .resume-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .resume-role {
+    margin: 0;
+    color: #183653;
+    font-size: 19px;
+    line-height: 1.3;
+  }
+
+  .resume-date {
+    flex-shrink: 0;
+    padding: 5px 9px;
+    border-radius: 6px;
+    background: #f1f6fa;
+    color: #52677d;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .resume-subtitle {
+    margin: 0 0 12px;
+    color: #52677d;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .resume-details {
+    margin: 0;
+    padding-left: 19px;
+    color: #344f6b;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .resume-details li + li {
+    margin-top: 8px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .skill-tag {
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: #eff6fb;
+    color: #2876a8;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+  }
+
+  @media (max-width: 700px) {
     .resume-section {
-      max-width: 900 px;
-      margin: 40 px auto;
-      padding: 0 20 px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #333333;
+      margin: 24px 12px;
+      padding: 26px 18px;
+    }
+
+    .resume-grid {
+      grid-template-columns: 1fr;
     }
 
     .resume-title {
-      text-align: center;
-      font-size: 2.2 rem;
-      margin-bottom: 30 px;
-      color: #111111;
+      font-size: 28px;
     }
 
-    /* Sub-heading for Categories */
-    .category-title {
-      font-size: 1.5 rem;
-      margin: 30 px 0 15 px 0;
-      color: #2563eb;
-      border-bottom: 2 px solid #e5e7eb;
-      padding-bottom: 5 px;
+    .resume-card-header {
+      flex-direction: column;
     }
-
-    /* Card Layout Grid */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: 1 fr;
-      gap: 20 px;
-    }
-
-     @ media (min-width: 640 px) {
-      .cards-grid-2col {
-        grid-template-columns: repeat (2, 1 fr);
-      }
-    }
-
-    /* Individual Card Styles */
-    .card {
-      background-color: #ffffff;
-      border: 1 px solid #e5e7eb;
-      border-radius: 12 px;
-      padding: 24 px;
-      box-shadow: 0 4 px 6 px -1 px rgba (0, 0, 0, 0.05), 0 2 px 4 px -1 px rgba (0, 0, 0, 0.03);
-      transition: transform 0.2 s ease, box-shadow 0.2 s ease;
-    }
-
-    .card:hover {
-      transform: translateY (-2 px);
-      box-shadow: 0 10 px 15 px -3 px rgba (0, 0, 0, 0.1), 0 4 px 6 px -2 px  rgba (0, 0, 0, 0.05);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8 px;
-      flex-wrap: wrap;
-      gap: 8 px;
-    }
-
-    .card-role {
-      font-size: 1.2 rem;
-      font-weight: 700;
-      color: #1f2937;
-      margin: 0;
-    }
-
-    .card-date {
-      font-size: 0.875 rem;
-      color: #6b7280;
-      font-weight: 500;
-      background-color: #f3f4f6;
-      padding: 4 px 8 px;
-      border-radius: 6 px;
-    }
-
-    .card-subtitle {
-      font-size: 1 rem;
-      font-weight: 600;
-      color: #4b5563;
-      margin: 0 0 12 px 0;
-    }
-
-    .card-body {
-      font-size: 0.95 rem;
-      line-height: 1.6;
-      color: #4b5563;
-    }
-
-    .card-body ul {
-      margin: 0;
-      padding-left: 20 px;
-    }
-
-    .card-body li {
-      margin-bottom: 6 px;
-    }
-
-    /* Skill Tags */
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8 px;
-      margin-top: 8 px;
-    }
-
-    .skill-tag {
-      background-color: #eff6ff;
-      color: #1d4ed8;
-      font-size: 0.85 rem;
-      font-weight: 500;
-      padding: 4 px 10 px;
-      border-radius: 9999 px;
-    }
-  </style>
-</head>
-<body>
+  }
+</style>
 
 <section class="resume-section">
-  <h2 class="resume-title">Resume & Experience</h2>
+  <header class="resume-header">
+    <p class="resume-eyebrow">Experience &amp; Education</p>
+    <h2 class="resume-title">My Experience</h2>
+    <p class="resume-intro">
+      Work experience, education, and skills in digital design, development,
+      research, and education.
+    </p>
+  </header>
 
-  <!-- ================= WORK EXPERIENCE SECTION ================= -->
-  <h3 class="category-title">Work Experience</h3>
-  <div class="cards-grid">
-    
-    <!-- Experience Card 1 -->
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-role">[Website Design Internship]</h4>
-        <span class="card-date">[August 2026] – [Present]</span>
-      </div>
-      <p class="card-subtitle">[Modern Campus] • [REMOTE]</p>
-      <div class="card-body">
-        <ul>
-          <li>[Redesigned university client websites using Modern Campus
-CMS, CSS formatting, and reusable components to improve
-digital experiences.]</li>
-          <li>[Built and published live webpages using HTML/CSS snippets and
-CMS components, translating content and design requirements
-into accessible interfaces.]</li>
-         
-        </ul>
-      </div>
-    </div>
+  <h3 class="resume-category-title">Work Experience</h3>
 
-    <!-- Experience Card 2 -->
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-role">[Graduate Assistantship- Website Design and Development]</h4>
-        <span class="card-date">[August 2026] – [Present]</span>
+  <div class="resume-grid">
+    <article class="resume-card">
+      <div class="resume-card-header">
+        <h4 class="resume-role">Website Design Internship</h4>
+        <span class="resume-date">August 2026–Present</span>
       </div>
-      <p class="card-subtitle">[UNC School of Education] • [Chapel Hill, NC]</p>
-      <div class="card-body">
-        <ul>
-          <li>[Managed and uploaded VR-compatible content with the program director to support immersive digital experiences for Website 360
-Exchange.]</li>
-          <li>[Developed AI-assisted HTML codes to design and implement website
-interfaces or Tar Heel Live, translating program needs into user-
-centered digital experiences.]</li>
-        </ul>
-      </div>
-    </div>
+      <p class="resume-subtitle">Modern Campus · Remote</p>
+      <ul class="resume-details">
+        <li>
+          Redesigned university client websites using Modern Campus CMS,
+          CSS formatting, and reusable components to improve digital experiences.
+        </li>
+        <li>
+          Built and published live webpages using HTML/CSS snippets and CMS
+          components, translating content and design requirements into
+          accessible interfaces.
+        </li>
+      </ul>
+    </article>
 
-       <!-- Experience Card 3 -->
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-role">[Digital Publications Editing Internship]</h4>
-        <span class="card-date">[August 2025] – [December 2025]</span>
+    <article class="resume-card">
+      <div class="resume-card-header">
+        <h4 class="resume-role">
+          Graduate Assistantship—Website Design and Development
+        </h4>
+        <span class="resume-date">August 2026–Present</span>
       </div>
-      <p class="card-subtitle">[Stockton University ARHU] • [Galloway,  NJ]</p>
-      <div class="card-body">
-        <ul>
-          <li>[Transcribed and digitally edited early 19th-century letters or the
-Massachusetts Historical Society, applying HTML markup and CMS
-conventions to prepare archival content for online publication.]</li>
-          <li>[Contributed to the digital edition project that was recognized with
-the 2025 Recovery Hub Digital Edition Prize.]</li>
-        </ul>
-      </div>
-    </div>
+      <p class="resume-subtitle">
+        UNC School of Education · Chapel Hill, NC
+      </p>
+      <ul class="resume-details">
+        <li>
+          Managed and uploaded VR-compatible content with the program director
+          to support immersive digital experiences for Website 360 Exchange.
+        </li>
+        <li>
+          Developed AI-assisted HTML code to design and implement website
+          interfaces for Tar Heel Live, translating program needs into
+          user-centered digital experiences.
+        </li>
+      </ul>
+    </article>
 
-       <!-- Experience Card 4 -->
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-role">[Constitution Day Fellowship]</h4>
-        <span class="card-date">[July 2025] – [September 2025]</span>
+    <article class="resume-card">
+      <div class="resume-card-header">
+        <h4 class="resume-role">Digital Publications Editing Internship</h4>
+        <span class="resume-date">August 2025–December 2025</span>
       </div>
-      <p class="card-subtitle">[William J. Hughes Center for Public Policy] • [Galloway,  NJ]</p>
-      <div class="card-body">
-        <ul>
-          <li>[Selected as one of six student fellows to research keynote
-speaker Mary McCord, reviewing her published work and
-congressional testimony to prepare event materials and
-discussion points.]</li>
-          <li>[Supported event execution and led promotional efforts through
-the fellowship’s Instagram takeover, expanding audience
-engagement and visibility for the program.]</li>
-        </ul>
-      </div>
-    </div>
+      <p class="resume-subtitle">
+        Stockton University ARHU · Galloway, NJ
+      </p>
+      <ul class="resume-details">
+        <li>
+          Transcribed and digitally edited early 19th-century letters for the
+          Massachusetts Historical Society, applying HTML markup and CMS
+          conventions to prepare archival content for online publication.
+        </li>
+        <li>
+          Contributed to the digital edition project recognized with the
+          2025 Recovery Hub Digital Edition Prize.
+        </li>
+      </ul>
+    </article>
 
-       <!-- Experience Card 5 -->
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-role">[Alliance Heritage Research Internship]</h4>
-        <span class="card-date">[January 2023] – [May 2023]</span>
+    <article class="resume-card">
+      <div class="resume-card-header">
+        <h4 class="resume-role">Constitution Day Fellowship</h4>
+        <span class="resume-date">July 2025–September 2025</span>
       </div>
-      <p class="card-subtitle">[Stockton University ARHU] • [Galloway,  NJ]</p>
-      <div class="card-body">
-        <ul>
-          <li>[Curated and reviewed historical materials or potential museum
-display, evaluating their relevance and presentation value.]</li>
-          <li>[Communicated actionable recommendations to the project
-coordinator to support exhibition planning and project
-development.]</li>
-        </ul>
+      <p class="resume-subtitle">
+        William J. Hughes Center for Public Policy · Galloway, NJ
+      </p>
+      <ul class="resume-details">
+        <li>
+          Selected as one of six student fellows to research keynote speaker
+          Mary McCord, reviewing her published work and congressional testimony
+          to prepare event materials and discussion points.
+        </li>
+        <li>
+          Supported event execution and led promotional efforts through the
+          fellowship’s Instagram takeover, expanding audience engagement and
+          program visibility.
+        </li>
+      </ul>
+    </article>
+
+    <article class="resume-card">
+      <div class="resume-card-header">
+        <h4 class="resume-role">Alliance Heritage Research Internship</h4>
+        <span class="resume-date">January 2023–May 2023</span>
       </div>
-    </div>
+      <p class="resume-subtitle">
+        Stockton University ARHU · Galloway, NJ
+      </p>
+      <ul class="resume-details">
+        <li>
+          Curated and reviewed historical materials for a potential museum
+          display, evaluating their relevance and presentation value.
+        </li>
+        <li>
+          Communicated actionable recommendations to the project coordinator
+          to support exhibition planning and project development.
+        </li>
+      </ul>
+    </article>
   </div>
 
-  <!-- ================= EDUCATION SECTION ================= -->
-  <h3 class="category-title">Education</h3>
-  <div class="cards-grid">
-    
-    <!-- Education Card 1 -->
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-role">[Master of Educational Innovation, Technology, and
-Entrepreneurship]</h4>
-        <span class="card-date">[August 2028]</span>
-      </div>
-      <p class="card-subtitle">[University of North Carolina] • [Chapel Hill]</p>
-      <div class="card-body">
-      </div>
-    </div>
-       <!-- Education Card 2 -->
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-role">[ BA in Literature, Teaching License Track ]</h4>
-        <span class="card-date">[August 2028]</span>
-      </div>
-      <p class="card-subtitle">[Stockton University] • [Galloway, NJ]</p>
-      <div class="card-body">
-      </div>
-    </div>
-       <!-- Education Card 3 -->
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-role">[Certificate in Educational Finance]</h4>
-        <span class="card-date">[2025]</span>
-      </div>
-      <p class="card-subtitle">[Georgetown University] • [Washington, D.C.]</p>
-      <div class="card-body">
-      </div>
-    </div>
+  <h3 class="resume-category-title">Education</h3>
 
+  <div class="resume-grid">
+    <article class="resume-card">
+      <div class="resume-card-header">
+        <h4 class="resume-role">
+          Master of Educational Innovation, Technology, and Entrepreneurship
+        </h4>
+        <span class="resume-date">August 2028</span>
+      </div>
+      <p class="resume-subtitle">
+        University of North Carolina · Chapel Hill
+      </p>
+    </article>
+
+    <article class="resume-card">
+      <div class="resume-card-header">
+        <h4 class="resume-role">BA in Literature, Teaching License Track</h4>
+        <span class="resume-date">August 2028</span>
+      </div>
+      <p class="resume-subtitle">Stockton University · Galloway, NJ</p>
+    </article>
+
+    <article class="resume-card">
+      <div class="resume-card-header">
+        <h4 class="resume-role">Certificate in Educational Finance</h4>
+        <span class="resume-date">2025</span>
+      </div>
+      <p class="resume-subtitle">
+        Georgetown University · Washington, D.C.
+      </p>
+    </article>
   </div>
 
-  <!-- ================= SKILLS SECTION ================= -->
-  <h3 class="category-title">Skills & Technologies</h3>
-  <div class="cards-grid cards-grid-2col">
-    
-    <!-- Skills Card 1 -->
-    <div class="card">
-      <h4 class="card-role" style="margin-bottom: 12 px;">Programming Languages</h4>
-      <div class="skills-container">
-        <span class="skill-tag">[HTML]</span>
-        <span class="skill-tag">[CSS]</span>
-        <span class="skill-tag">[CMS]</span>
- 
-      </div>
-    </div>
+  <h3 class="resume-category-title">Skills &amp; Technologies</h3>
 
-    <!-- Skills Card 2 -->
-    <div class="card">
-      <h4 class="card-role" style="margin-bottom: 12 px;">Tools & Frameworks</h4>
-      <div class="skills-container">
-        <span class="skill-tag">[Microsoft]</span>
-        <span class="skill-tag">[Figma- Foundational Knowledge]</span>
-        <span class="skill-tag">[Git / GitHub]</span>
-        <span class="skill-tag">[TextEdit]</span>
-       
+  <div class="resume-grid">
+    <article class="resume-card">
+      <h4 class="resume-role">Programming Languages</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">CMS</span>
       </div>
-    </div>
+    </article>
 
+    <article class="resume-card">
+      <h4 class="resume-role">Tools &amp; Frameworks</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Microsoft</span>
+        <span class="skill-tag">Figma—Foundational Knowledge</span>
+        <span class="skill-tag">Git / GitHub</span>
+        <span class="skill-tag">TextEdit</span>
+      </div>
+    </article>
   </div>
 </section>
-
-</body>
-</html>
             
         
     </section>
